@@ -39,6 +39,52 @@ export default function App(){
         setComments(updateRelies(comments));
         
     }
+
+    function handleDelete(commentId){
+
+        const deleteComment = (comments) => {
+            return comments
+            .filter(
+                comment => comment.id !== commentId
+            )
+            .map(comment => {
+                if(comment.replies && comment.replies.length > 0){
+                    return {
+                        ...comment,
+                        replies: deleteComment(comment.replies)
+                    };
+                }
+
+                return comment;
+            }
+
+            );
+        }
+
+        setComments(deleteComment(comments));
+
+    }
+    function handleEdit(commentId, newContent){
+        const updateContent = (comments) => {
+            return comments.map(comment => {
+                if(comment.id === commentId){
+                    return {
+                        ...comment,
+                        content: newContent
+                    };
+                }
+                if(comment.replies && comment.replies.length > 0){
+                    return {
+                        ...comment,
+                        replies: updateContent(comment.replies)
+                    };
+                }
+                return comment;
+            });
+        };
+
+        setComments(updateContent(comments));
+    }
     return (
         <div className='m-6'>
             { comments.map( comment => (
@@ -48,6 +94,8 @@ export default function App(){
                 currentUser={currentUser} 
                 comment={comment}
                 onAddReply={handleReply}
+                onDelete={handleDelete}
+                onEdit={handleEdit}
                 />
             
                 

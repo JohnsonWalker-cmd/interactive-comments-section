@@ -86,7 +86,7 @@ export default function App(){
         setComments(updateContent(comments));
     }
     return (
-        <div className='m-6'>
+        <div className='m-6 max-w-3xl md:mx-auto flex flex-col gap-4 ml-4 mr-4'>
             { comments.map( comment => (
 
                 <Comment 

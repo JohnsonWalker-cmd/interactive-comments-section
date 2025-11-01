@@ -1,11 +1,19 @@
 import SearchBox from './components/SearchBox'
 import data from './data.json'
-import { useState } from 'react'
+import { useState  , useEffect} from 'react'
 import Comment from './components/Comment';
 
 export default function App(){
     const currentUser = data.currentUser ;
-    const [comments , setComments] = useState(data.comments);
+    const [comments , setComments] = useState(() => {
+        const savedComments = localStorage.getItem('comments');
+        return savedComments ? JSON.parse(savedComments) : data.comments;
+    })
+    
+
+    useEffect(()=> {
+        localStorage.setItem('comments' , JSON.stringify(comments));
+    } , [comments])
 
     function handleComment(newComment){
         setComments([...comments , newComment]);

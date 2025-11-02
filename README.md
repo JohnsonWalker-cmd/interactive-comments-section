@@ -1,6 +1,6 @@
 # Frontend Mentor - Interactive comments section
 
-This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/interactive-comments-section-built-with-react-and-tailwindcss-9mVwmoiHZw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -33,7 +33,7 @@ Users should be able to
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/interactive-comments-section-built-with-react-and-tailwindcss-9mVwmoiHZw]
 - Live Site URL: [https://interactive-comments-section-black.vercel.app/]
 
 ## My process
